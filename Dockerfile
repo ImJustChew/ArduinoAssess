@@ -35,10 +35,11 @@ COPY server ./server
 COPY --from=builder /app/dist ./dist
 
 # Expose port (Cloud Run will set PORT env var)
-EXPOSE 3000
+EXPOSE 8080
 
 # Set production environment
 ENV NODE_ENV=production
+ENV PORT=8080
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
