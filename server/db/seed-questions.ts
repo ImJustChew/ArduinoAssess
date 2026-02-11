@@ -27,6 +27,283 @@ interface SeedQuestion {
 }
 
 const seedQuestions: SeedQuestion[] = [
+  // ============ DIFFICULTY 1 - VERY BASIC QUESTIONS ============
+
+  {
+    dimension: 'hardware_io',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'What does the Arduino function pinMode() do?',
+      type: 'multipleChoice',
+      choices: [
+        'Turns an LED on or off',
+        'Configures a pin as input or output',
+        'Reads a sensor value',
+        'Waits for a specified time',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['pinMode', 'basic', 'setup'],
+    },
+  },
+
+  {
+    dimension: 'hardware_io',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'What are the two states you can write to a digital pin?',
+      type: 'multipleChoice',
+      choices: [
+        'ON and OFF',
+        'HIGH and LOW',
+        '1 and 0',
+        'TRUE and FALSE',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['digital', 'basic', 'constants'],
+    },
+  },
+
+  {
+    dimension: 'control_flow',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'Which Arduino function runs only once when the board starts?',
+      type: 'multipleChoice',
+      choices: [
+        'loop()',
+        'setup()',
+        'start()',
+        'begin()',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['setup', 'basic', 'structure'],
+    },
+  },
+
+  {
+    dimension: 'control_flow',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'Which Arduino function runs continuously after setup()?',
+      type: 'multipleChoice',
+      choices: [
+        'repeat()',
+        'run()',
+        'loop()',
+        'main()',
+      ],
+      correctChoiceIndex: 2,
+      tags: ['loop', 'basic', 'structure'],
+    },
+  },
+
+  {
+    dimension: 'low_level',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'What is the decimal value of binary 10?',
+      type: 'multipleChoice',
+      choices: ['1', '2', '10', '3'],
+      correctChoiceIndex: 1,
+      tags: ['binary', 'conversion', 'basic'],
+    },
+  },
+
+  {
+    dimension: 'code_reading',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'What does this line do?\n\nint ledPin = 13;',
+      type: 'multipleChoice',
+      choices: [
+        'Turns on pin 13',
+        'Creates a variable named ledPin with value 13',
+        'Sets pin 13 to output mode',
+        'Reads pin 13',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['variables', 'basic', 'syntax'],
+    },
+  },
+
+  {
+    dimension: 'decomposition',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'In which function should you put pinMode() statements?',
+      type: 'multipleChoice',
+      choices: [
+        'loop()',
+        'setup()',
+        'Both setup() and loop()',
+        'Before setup() and loop()',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['setup', 'initialization', 'basic'],
+    },
+  },
+
+  {
+    dimension: 'hardware_io',
+    difficulty: 1,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code to turn on an LED connected to pin 13.',
+      type: 'codeIDE',
+      starterCode: `void setup() {
+  // Write your code here
+
+}
+
+void loop() {
+  // Leave empty
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'Pin 13 configured as OUTPUT',
+          assertion: 'pinMode(13, OUTPUT)',
+        },
+        {
+          id: '2',
+          description: 'LED turned on with digitalWrite',
+          assertion: 'digitalWrite(13, HIGH)',
+        },
+      ],
+      tags: ['led', 'basic', 'digitalWrite'],
+    },
+  },
+
+  {
+    dimension: 'control_flow',
+    difficulty: 1,
+    questionType: 'trace',
+    questionData: {
+      prompt: 'What does this code print?',
+      type: 'trace',
+      codeToTrace: `void setup() {
+  Serial.begin(9600);
+  Serial.println("Hello");
+}
+void loop() {}`,
+      traceQuestion: 'What is printed?',
+      traceAnswer: 'Hello',
+      tags: ['serial', 'basic', 'output'],
+    },
+  },
+
+  {
+    dimension: 'code_reading',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'What does digitalWrite(13, HIGH) do?',
+      type: 'multipleChoice',
+      choices: [
+        'Reads pin 13',
+        'Turns pin 13 on (sets it to HIGH)',
+        'Configures pin 13 as output',
+        'Waits for 13 seconds',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['digitalWrite', 'basic', 'output'],
+    },
+  },
+
+  {
+    dimension: 'code_reading',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'What does delay(1000) do?',
+      type: 'multipleChoice',
+      choices: [
+        'Waits 1 millisecond',
+        'Waits 1 second',
+        'Waits 1 minute',
+        'Repeats 1000 times',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['delay', 'basic', 'timing'],
+    },
+  },
+
+  {
+    dimension: 'decomposition',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'To make an LED blink, what do you need in loop()?',
+      type: 'multipleChoice',
+      choices: [
+        'Only digitalWrite',
+        'Only delay',
+        'digitalWrite to turn on, delay, digitalWrite to turn off, delay',
+        'Only pinMode',
+      ],
+      correctChoiceIndex: 2,
+      tags: ['blink', 'basic', 'planning'],
+    },
+  },
+
+  {
+    dimension: 'low_level',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'How many different values can a digital pin have?',
+      type: 'multipleChoice',
+      choices: ['1', '2', '10', '255'],
+      correctChoiceIndex: 1,
+      tags: ['digital', 'basic', 'concept'],
+    },
+  },
+
+  {
+    dimension: 'hardware_io',
+    difficulty: 1,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'What is the first thing you must do before using a pin?',
+      type: 'multipleChoice',
+      choices: [
+        'Call digitalWrite',
+        'Call pinMode to configure it',
+        'Call delay',
+        'Call Serial.begin',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['pinMode', 'basic', 'setup'],
+    },
+  },
+
+  {
+    dimension: 'control_flow',
+    difficulty: 1,
+    questionType: 'trace',
+    questionData: {
+      prompt: 'What number is printed?',
+      type: 'trace',
+      codeToTrace: `void setup() {
+  Serial.begin(9600);
+  int x = 10;
+  Serial.println(x);
+}
+void loop() {}`,
+      traceQuestion: 'What is printed?',
+      traceAnswer: '10',
+      tags: ['variables', 'basic', 'serial'],
+    },
+  },
+
   // ============ LOW LEVEL BINARY - Difficulty 2 ============
   {
     dimension: 'low_level',
@@ -517,59 +794,12 @@ void loop() {}`,
   {
     dimension: 'hardware_io',
     difficulty: 3,
-    questionType: 'multiple_choice',
-    questionData: {
-      prompt: 'What range of values can you write with analogWrite()?',
-      type: 'multipleChoice',
-      choices: ['0-1023', '0-255', '0-100', '0-5'],
-      correctChoiceIndex: 1,
-      tags: ['analogWrite', 'pwm', 'range'],
-    },
-  },
-  {
-    dimension: 'hardware_io',
-    difficulty: 3,
-    questionType: 'multiple_choice',
-    questionData: {
-      prompt:
-        'To dim an LED gradually (not just ON/OFF), which function should you use?',
-      type: 'multipleChoice',
-      choices: [
-        'digitalWrite()',
-        'analogWrite() with PWM',
-        'digitalRead()',
-        'Serial.println()',
-      ],
-      correctChoiceIndex: 1,
-      tags: ['pwm', 'analogWrite', 'dimming'],
-    },
-  },
-  {
-    dimension: 'hardware_io',
-    difficulty: 3,
     questionType: 'one_liner',
     questionData: {
       prompt: 'What function reads the voltage on analog pin A0?',
       type: 'oneLiner',
       expectedAnswer: 'analogRead(A0)',
       tags: ['analog', 'input', 'functions'],
-    },
-  },
-  {
-    dimension: 'hardware_io',
-    difficulty: 3,
-    questionType: 'multiple_choice',
-    questionData: {
-      prompt: 'Which pins on Arduino UNO support PWM (analogWrite)?',
-      type: 'multipleChoice',
-      choices: [
-        'All digital pins',
-        'Pins marked with ~ symbol (3, 5, 6, 9, 10, 11)',
-        'Only pin 13',
-        'All analog pins',
-      ],
-      correctChoiceIndex: 1,
-      tags: ['pwm', 'pins', 'hardware'],
     },
   },
   {
@@ -591,7 +821,88 @@ void loop() {}`,
     },
   },
 
-  // ============ HARDWARE IO - Difficulty 4 ============
+  // ============ HARDWARE IO - Difficulty 4 (Advanced/PWM) ============
+  {
+    dimension: 'hardware_io',
+    difficulty: 4,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'What range of values can you write with analogWrite()?',
+      type: 'multipleChoice',
+      choices: ['0-1023', '0-255', '0-100', '0-5'],
+      correctChoiceIndex: 1,
+      tags: ['analogWrite', 'pwm', 'range', 'advanced'],
+    },
+  },
+  {
+    dimension: 'hardware_io',
+    difficulty: 4,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt:
+        'To dim an LED gradually (not just ON/OFF), which function should you use?',
+      type: 'multipleChoice',
+      choices: [
+        'digitalWrite()',
+        'analogWrite() with PWM',
+        'digitalRead()',
+        'Serial.println()',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['pwm', 'analogWrite', 'dimming', 'advanced'],
+    },
+  },
+  {
+    dimension: 'hardware_io',
+    difficulty: 4,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'Which pins on Arduino UNO support PWM (analogWrite)?',
+      type: 'multipleChoice',
+      choices: [
+        'All digital pins',
+        'Pins marked with ~ symbol (3, 5, 6, 9, 10, 11)',
+        'Only pin 13',
+        'All analog pins',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['pwm', 'pins', 'hardware', 'advanced'],
+    },
+  },
+  {
+    dimension: 'low_level',
+    difficulty: 4,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'What does PWM stand for in Arduino?',
+      type: 'multipleChoice',
+      choices: [
+        'Power Wire Management',
+        'Pulse Width Modulation',
+        'Program Write Mode',
+        'Pin Wire Module',
+      ],
+      correctChoiceIndex: 1,
+      tags: ['pwm', 'terminology', 'advanced'],
+    },
+  },
+  {
+    dimension: 'low_level',
+    difficulty: 4,
+    questionType: 'multiple_choice',
+    questionData: {
+      prompt: 'If you use analogWrite(9, 127) on an LED, what happens?',
+      type: 'multipleChoice',
+      choices: [
+        'LED is fully on',
+        'LED is fully off',
+        'LED is at 50% brightness (half on)',
+        'LED blinks',
+      ],
+      correctChoiceIndex: 2,
+      tags: ['pwm', 'analogWrite', 'brightness', 'advanced'],
+    },
+  },
   {
     dimension: 'hardware_io',
     difficulty: 4,
@@ -1405,6 +1716,24 @@ void loop() {
   },
 
   {
+    dimension: 'low_level',
+    difficulty: 4,
+    questionType: 'trace' as any,
+    questionData: {
+      prompt: 'A student is confused about analog vs digital signals.',
+      type: 'chatbotStudent',
+      chatbotPersona: 'I do not understand the difference between digitalWrite and analogWrite. When do I use each?',
+      chatbotProblem: `// Student wants to control LED brightness
+void loop() {
+  digitalWrite(9, 128); // Trying to set 50% brightness
+  delay(1000);
+}`,
+      chatbotSolution: "digitalWrite only sets pins to HIGH (on) or LOW (off) - it is digital (only 2 states). For LED brightness control, use analogWrite(pin, value) where value is 0-255. analogWrite(9, 128) would give 50% brightness. digitalWrite(9, HIGH) would be full on, digitalWrite(9, LOW) would be off. Use analogWrite for PWM pins (marked with ~) when you need variable output levels. Note: analogWrite is an advanced topic using PWM.",
+      tags: ['analog', 'digital', 'pwm', 'advanced'],
+    },
+  },
+
+  {
     dimension: 'hardware_io',
     difficulty: 4,
     questionType: 'code_ide',
@@ -1622,24 +1951,6 @@ void loop() {
   },
 
   {
-    dimension: 'low_level',
-    difficulty: 3,
-    questionType: 'trace' as any,
-    questionData: {
-      prompt: 'A student is confused about analog vs digital signals.',
-      type: 'chatbotStudent',
-      chatbotPersona: 'I do not understand the difference between digitalWrite and analogWrite. When do I use each?',
-      chatbotProblem: `// Student wants to control LED brightness
-void loop() {
-  digitalWrite(9, 128); // Trying to set 50% brightness
-  delay(1000);
-}`,
-      chatbotSolution: "digitalWrite only sets pins to HIGH (on) or LOW (off) - it is digital (only 2 states). For LED brightness control, use analogWrite(pin, value) where value is 0-255. analogWrite(9, 128) would give 50% brightness. digitalWrite(9, HIGH) would be full on, digitalWrite(9, LOW) would be off. Use analogWrite for PWM pins (marked with ~) when you need variable output levels.",
-      tags: ['analog', 'digital', 'pwm'],
-    },
-  },
-
-  {
     dimension: 'control_flow',
     difficulty: 3,
     questionType: 'trace' as any,
@@ -1769,6 +2080,462 @@ void loop() {
 }`,
       chatbotSolution: "Line 2 is missing a semicolon after OUTPUT. Every statement in C/Arduino must end with a semicolon. The compiler gets confused when it sees the closing brace without the semicolon.",
       tags: ['compile-error', 'semicolon', 'syntax'],
+    },
+  },
+
+  // ============ MORE CODE IDE QUESTIONS ============
+
+  {
+    dimension: 'control_flow',
+    difficulty: 2,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code that uses a for loop to turn on LEDs on pins 2, 3, 4, and 5 in sequence.',
+      type: 'codeIDE',
+      starterCode: `void setup() {
+  // Configure LED pins here
+
+}
+
+void loop() {
+  // Turn on LEDs in sequence
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'All pins 2-5 configured as OUTPUT',
+          assertion: 'pinMode called for pins 2, 3, 4, 5',
+        },
+        {
+          id: '2',
+          description: 'For loop used to iterate through pins',
+          assertion: 'for loop iterating through pin numbers',
+        },
+        {
+          id: '3',
+          description: 'digitalWrite used to turn on each LED',
+          assertion: 'digitalWrite(pin, HIGH) inside loop',
+        },
+      ],
+      tags: ['for-loop', 'led', 'sequence'],
+    },
+  },
+
+  {
+    dimension: 'hardware_io',
+    difficulty: 2,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code to read a potentiometer on A0 and print its value to Serial Monitor.',
+      type: 'codeIDE',
+      starterCode: `void setup() {
+  // Initialize Serial
+
+}
+
+void loop() {
+  // Read potentiometer and print value
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'Serial.begin(9600) in setup',
+          assertion: 'Serial.begin called',
+        },
+        {
+          id: '2',
+          description: 'analogRead(A0) used',
+          assertion: 'analogRead(A0) called',
+        },
+        {
+          id: '3',
+          description: 'Value printed to Serial',
+          assertion: 'Serial.println() with sensor value',
+        },
+      ],
+      tags: ['analog', 'potentiometer', 'serial'],
+    },
+  },
+
+  {
+    dimension: 'decomposition',
+    difficulty: 3,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code that counts button presses and displays the count on Serial Monitor. Use edge detection.',
+      type: 'codeIDE',
+      starterCode: `int buttonPin = 2;
+int counter = 0;
+int previousState = HIGH;
+
+void setup() {
+  // Initialize Serial and button pin
+
+}
+
+void loop() {
+  // Detect button press and increment counter
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'Button pin configured as INPUT_PULLUP',
+          assertion: 'pinMode(buttonPin, INPUT_PULLUP)',
+        },
+        {
+          id: '2',
+          description: 'Edge detection implemented',
+          assertion: 'currentState compared with previousState',
+        },
+        {
+          id: '3',
+          description: 'Counter incremented on button press',
+          assertion: 'counter++ when button pressed',
+        },
+        {
+          id: '4',
+          description: 'Count printed to Serial',
+          assertion: 'Serial.println(counter)',
+        },
+      ],
+      tags: ['button', 'counter', 'edge-detection'],
+    },
+  },
+
+  {
+    dimension: 'hardware_io',
+    difficulty: 4,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code to control LED brightness with a potentiometer using PWM. Map the potentiometer reading (0-1023) to LED brightness (0-255).',
+      type: 'codeIDE',
+      starterCode: `int ledPin = 9;
+int potPin = A0;
+
+void setup() {
+  // Configure pins
+
+}
+
+void loop() {
+  // Read potentiometer and control LED brightness
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'LED pin configured as OUTPUT',
+          assertion: 'pinMode(9, OUTPUT)',
+        },
+        {
+          id: '2',
+          description: 'Potentiometer value read',
+          assertion: 'analogRead(A0) called',
+        },
+        {
+          id: '3',
+          description: 'map() function used to convert 0-1023 to 0-255',
+          assertion: 'map(value, 0, 1023, 0, 255)',
+        },
+        {
+          id: '4',
+          description: 'analogWrite used to set brightness',
+          assertion: 'analogWrite(9, brightness)',
+        },
+      ],
+      tags: ['potentiometer', 'pwm', 'map'],
+    },
+  },
+
+  {
+    dimension: 'decomposition',
+    difficulty: 3,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code for a simple reaction game: LED turns on at random times, user must press button. Print reaction time in milliseconds.',
+      type: 'codeIDE',
+      starterCode: `int ledPin = 13;
+int buttonPin = 2;
+unsigned long startTime = 0;
+
+void setup() {
+  // Initialize pins and Serial
+
+}
+
+void loop() {
+  // Implement reaction game logic
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'LED and button pins configured',
+          assertion: 'pinMode for LED and button',
+        },
+        {
+          id: '2',
+          description: 'millis() used to record start time',
+          assertion: 'startTime = millis() when LED turns on',
+        },
+        {
+          id: '3',
+          description: 'Button press detected',
+          assertion: 'digitalRead(buttonPin) checked',
+        },
+        {
+          id: '4',
+          description: 'Reaction time calculated and printed',
+          assertion: 'millis() - startTime printed',
+        },
+      ],
+      tags: ['reaction-time', 'millis', 'game'],
+    },
+  },
+
+  {
+    dimension: 'control_flow',
+    difficulty: 3,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code that blinks an LED faster each time a button is pressed (100ms, 200ms, 300ms intervals). Reset to 100ms after reaching 500ms.',
+      type: 'codeIDE',
+      starterCode: `int ledPin = 13;
+int buttonPin = 2;
+int blinkInterval = 100;
+int previousState = HIGH;
+
+void setup() {
+  // Configure pins
+
+}
+
+void loop() {
+  // Detect button press and adjust blink speed
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'Pins configured correctly',
+          assertion: 'pinMode for LED and button',
+        },
+        {
+          id: '2',
+          description: 'Edge detection for button',
+          assertion: 'currentState and previousState comparison',
+        },
+        {
+          id: '3',
+          description: 'blinkInterval incremented by 100',
+          assertion: 'blinkInterval += 100 or similar',
+        },
+        {
+          id: '4',
+          description: 'Reset logic when interval > 500',
+          assertion: 'if (blinkInterval > 500) blinkInterval = 100',
+        },
+      ],
+      tags: ['button', 'state', 'variable-timing'],
+    },
+  },
+
+  {
+    dimension: 'low_level',
+    difficulty: 3,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code to display a binary counter on 4 LEDs (pins 2-5) that counts from 0 to 15, showing each number in binary for 1 second.',
+      type: 'codeIDE',
+      starterCode: `void setup() {
+  // Configure LED pins
+
+}
+
+void loop() {
+  // Binary counter
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'Pins 2-5 configured as OUTPUT',
+          assertion: 'pinMode for pins 2, 3, 4, 5',
+        },
+        {
+          id: '2',
+          description: 'For loop counting 0-15',
+          assertion: 'for (int i = 0; i <= 15; i++)',
+        },
+        {
+          id: '3',
+          description: 'Bitwise operations to extract bits',
+          assertion: 'Bitwise & or bit shifting used',
+        },
+        {
+          id: '4',
+          description: 'delay(1000) between numbers',
+          assertion: 'delay(1000) called',
+        },
+      ],
+      tags: ['binary', 'bitwise', 'led-display'],
+    },
+  },
+
+  {
+    dimension: 'hardware_io',
+    difficulty: 4,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code to create a "breathing" LED effect that smoothly fades in and out continuously using analogWrite (PWM).',
+      type: 'codeIDE',
+      starterCode: `int ledPin = 9;
+
+void setup() {
+  // Configure pin
+
+}
+
+void loop() {
+  // Breathing effect
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'Pin 9 configured as OUTPUT',
+          assertion: 'pinMode(9, OUTPUT)',
+        },
+        {
+          id: '2',
+          description: 'Fade up loop (0 to 255)',
+          assertion: 'for loop increasing brightness',
+        },
+        {
+          id: '3',
+          description: 'Fade down loop (255 to 0)',
+          assertion: 'for loop decreasing brightness',
+        },
+        {
+          id: '4',
+          description: 'analogWrite used',
+          assertion: 'analogWrite(9, brightness)',
+        },
+        {
+          id: '5',
+          description: 'Small delay for smooth effect',
+          assertion: 'delay() in loops',
+        },
+      ],
+      tags: ['pwm', 'fade', 'advanced'],
+    },
+  },
+
+  {
+    dimension: 'decomposition',
+    difficulty: 4,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code for an LED chaser with 4 LEDs (pins 2-5) that shifts left when button A (pin 7) is pressed, and shifts right when button B (pin 8) is pressed. Use edge detection.',
+      type: 'codeIDE',
+      starterCode: `int leds[] = {2, 3, 4, 5};
+int buttonA = 7;
+int buttonB = 8;
+int currentPos = 0;
+int prevStateA = HIGH;
+int prevStateB = HIGH;
+
+void setup() {
+  // Configure pins
+
+}
+
+void loop() {
+  // LED chaser with directional control
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'All LED pins configured as OUTPUT',
+          assertion: 'pinMode for all LED pins',
+        },
+        {
+          id: '2',
+          description: 'Button pins configured as INPUT_PULLUP',
+          assertion: 'pinMode for buttons with INPUT_PULLUP',
+        },
+        {
+          id: '3',
+          description: 'Edge detection for both buttons',
+          assertion: 'currentState and previousState for both buttons',
+        },
+        {
+          id: '4',
+          description: 'Position increments/decrements with wraparound',
+          assertion: 'currentPos changes with boundary checking',
+        },
+        {
+          id: '5',
+          description: 'Only one LED on at a time',
+          assertion: 'Turn off current LED before moving',
+        },
+      ],
+      tags: ['led-chaser', 'multi-button', 'advanced'],
+    },
+  },
+
+  {
+    dimension: 'control_flow',
+    difficulty: 4,
+    questionType: 'code_ide',
+    questionData: {
+      prompt: 'Write code that detects a long press (button held for 2+ seconds) vs a short press (less than 2 seconds). Print "SHORT" or "LONG" to Serial.',
+      type: 'codeIDE',
+      starterCode: `int buttonPin = 2;
+int prevState = HIGH;
+unsigned long pressStartTime = 0;
+
+void setup() {
+  // Initialize
+
+}
+
+void loop() {
+  // Detect short vs long press
+
+}`,
+      testCases: [
+        {
+          id: '1',
+          description: 'Serial and button initialized',
+          assertion: 'Serial.begin and pinMode',
+        },
+        {
+          id: '2',
+          description: 'Detects button press start (HIGH to LOW)',
+          assertion: 'if (currentState == LOW && prevState == HIGH)',
+        },
+        {
+          id: '3',
+          description: 'Records time with millis() when pressed',
+          assertion: 'pressStartTime = millis()',
+        },
+        {
+          id: '4',
+          description: 'Detects button release (LOW to HIGH)',
+          assertion: 'if (currentState == HIGH && prevState == LOW)',
+        },
+        {
+          id: '5',
+          description: 'Calculates duration and prints SHORT or LONG',
+          assertion: 'millis() - pressStartTime compared to 2000',
+        },
+      ],
+      tags: ['long-press', 'millis', 'timing', 'advanced'],
     },
   },
 ];
